@@ -1,23 +1,23 @@
-import { darken, lighten, rgba, shade } from 'polished';
+import { darken, lighten, rgba, shade } from "polished";
 
-const primaryColor = 'rgba(250, 107, 77, 0.97)';
+const primaryColor = "rgba(250, 107, 77, 0.97)";
 
 export const theme = {
-  name: 'Default',
+  name: "Default",
   color: {
-    background: '#ffffff',
+    background: "#ffffff",
     primary: primaryColor,
-    primaryDark: '#000022',
-    gray: 'rgba(0, 0, 0, 0.12)',
-    primaryGradient: `linear-gradient(95.36deg, ${lighten(0.05, primaryColor)} 16.39%, ${shade(
-      0.18,
-      darken(0, primaryColor),
-    )} 130.71%)`,
-    sectionBg: rgba('#777777', 0.03),
+    primaryDark: "#000022",
+    gray: "rgba(0, 0, 0, 0.12)",
+    primaryGradient: `linear-gradient(95.36deg, ${lighten(
+      0.05,
+      primaryColor
+    )} 16.39%, ${shade(0.18, darken(0, primaryColor))} 130.71%)`,
+    sectionBg: rgba("#777777", 0.03),
   },
-  borderRadius: '16px',
+  borderRadius: "16px",
   spacing: {
-    sectionMarginTop: '14rem',
+    sectionMarginTop: "14rem",
   },
   flexboxgrid: {
     // Defaults
