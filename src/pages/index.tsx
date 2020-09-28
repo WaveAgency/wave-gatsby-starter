@@ -1,25 +1,29 @@
 import React from "react";
-import { Link } from "gatsby";
-
 import Layout from "../components/Shared/Layout/Layout";
-import Image from "./image";
 import { SEO } from "../components/Shared/SEO/SEO";
+import { styled } from "linaria/react";
+
+const Intro = styled.div`
+  height: calc(100vh - 80px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 8.2rem;
+
+  span {
+    width: 70%;
+    margin: auto;
+    text-align: center;
+    font-weight: 700;
+  }
+`;
 
 const IndexPage = () => (
   <Layout>
     <SEO title={"home"} description="This is an index page" />
-    <h1>Hi there!</h1>
-    <p>
-      <strong>Thanks for using awesome-gatsby-starter!</strong> Remember to{" "}
-      <a href="https://github.com/RobertoMSousa/gatsby-typescript-storybook-starter">
-        drop a ⭐ on the project
-      </a>{" "}
-      if you find it useful.
-    </p>
-    <div style={{ maxWidth: "300px", marginBottom: "1.45rem" }}>
-      <Image />
-    </div>
-    <Link to="/page-2/">Go to page 2</Link>
+    <Intro>
+      <span>Hello this is a Momentum. starter</span>
+    </Intro>
   </Layout>
 );
 

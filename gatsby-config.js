@@ -13,12 +13,13 @@ module.exports = {
     url: siteUrl,
     keywords: siteKeywords,
     image: siteImage,
-    siteUrl,
+    siteUrl
   },
   plugins: [
     "gatsby-plugin-typescript",
+    "gatsby-plugin-linaria",
+    "gatsby-plugin-webpack-bundle-analyzer",
     "gatsby-plugin-react-helmet",
-    "gatsby-plugin-styled-components",
     "gatsby-plugin-offline",
     "gatsby-plugin-robots-txt",
     "gatsby-transformer-sharp",
@@ -27,8 +28,8 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
-        path: `${__dirname}/src/assets`,
-      },
+        path: `${__dirname}/src/assets`
+      }
     },
     {
       resolve: `gatsby-plugin-prefetch-google-fonts`,
@@ -36,23 +37,23 @@ module.exports = {
         fonts: [
           {
             family: `Roboto`,
-            subsets: [`latin`],
-            variants: [`400`, `700`, "500", "900", "600"],
-          },
-        ],
-      },
+            subsets: [`latin-ext`],
+            variants: [`400`, `700`, "500", "900", "600"]
+          }
+        ]
+      }
     },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: "gatsby-starter-default",
-        short_name: "starter",
+        name: siteTitle,
+        short_name: siteTitle,
         start_url: "/",
         background_color: "#663399",
         theme_color: "#663399",
-        display: "minimal-ui",
-        icon: "src/assets/gatsby-icon.png", // This path is relative to the root of the site.
-      },
-    },
-  ],
+        display: "standalone",
+        icon: "src/assets/favicon.png"
+      }
+    }
+  ]
 };

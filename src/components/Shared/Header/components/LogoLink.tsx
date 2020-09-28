@@ -1,8 +1,8 @@
 import React from "react";
-import styled, { StyledComponent } from "styled-components";
 import { graphql, Link, useStaticQuery } from "gatsby";
-import { routes } from "../../../../../../lib/routes";
+import { routes } from "../../../../lib/routes";
 import GatsbyImage from "gatsby-image";
+import { styled } from "linaria/react";
 
 export type LogoLinkProps = React.HTMLAttributes<HTMLElement>;
 
@@ -25,4 +25,4 @@ const LogoLinkInner: React.FC<LogoLinkProps> = (props: LogoLinkProps) => {
   );
 };
 
-export const LogoLink = styled(LogoLinkInner)<LogoLinkProps>``;
+export const LogoLink = styled(LogoLinkInner)``;

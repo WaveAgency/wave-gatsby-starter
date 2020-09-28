@@ -2,12 +2,9 @@ import React from "react";
 import PropTypes from "prop-types";
 import Helmet from "react-helmet";
 import { graphql, StaticQuery } from "gatsby";
-import { ThemeProvider } from "styled-components";
 import { GlobalStyle } from "../Theme/components/GlobalStyle";
-import { theme } from "../Theme/Theme";
-import { Header } from "./components/Header/Header";
-import { Footer } from "./components/Footer/Footer";
-import ResetStyle from "../Theme/components/Reset";
+import { Header } from "../Header/Header";
+import { Footer } from "../Footer/Footer";
 
 const Layout = ({ children }) => {
   return (
@@ -21,17 +18,16 @@ const Layout = ({ children }) => {
           }
         }
       `}
-      render={(data) => (
-        <ThemeProvider theme={theme}>
-          <GlobalStyle />
+      render={data => (
+        <div className={GlobalStyle}>
           <Helmet
             title={data.site.siteMetadata.title}
             meta={[
               { name: "description", content: "Sample" },
               {
                 name: "keywords",
-                content: "sample, something",
-              },
+                content: "sample, something"
+              }
             ]}
           >
             <html lang="en" />
@@ -39,14 +35,14 @@ const Layout = ({ children }) => {
           <Header />
           <main>{children}</main>
           <Footer />
-        </ThemeProvider>
+        </div>
       )}
     />
   );
 };
 
 Layout.propTypes = {
-  children: PropTypes.node.isRequired,
+  children: PropTypes.node.isRequired
 };
 
 export default Layout;
